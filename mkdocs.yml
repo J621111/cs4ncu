@@ -70,7 +70,13 @@ plugins:
   - search:
       lang: zh # 启用中文搜索支持
   - tags   # 启用标签系统
-  - git-authors
+  - git-committers:
+      repository: NCUSCC/cs4ncu
+      branch: main
+      token: !ENV GITHUB_TOKEN
+      # 仅当环境变量 ENABLE_COMMITTERS=true 时才启用此插件
+      # 默认情况下 (本地开发), 此插件是禁用的
+      enabled: !ENV [ENABLE_COMMITTERS, false]
 
 # --- Markdown 扩展 (增强内容显示) ---
 # 合并后的 mkdocs.yml 配置
@@ -198,6 +204,7 @@ nav:
         - '电脑认知': 'skills/tools/literacy/computer-basics.md'
         - '高效打字': 'skills/tools/literacy/typing.md'
         - '网络工具': 'skills/tools/literacy/network-proxy.md'
+        - '版本选择': 'skills/tools/literacy/version-control.md'
       - '信息管理':
         - '云笔记': 'skills/tools/pkm/cloud-notes.md'
         - '协作文档': 'skills/tools/pkm/collaboration-docs.md'
@@ -230,20 +237,31 @@ nav:
 
   # 顶层导航 4: 昌大专属附录
   - '昌大专属资源库':
-    - '本部分导览': 'ncu/index.md'
-    - '保研': 
-      - '计科推免全流程': 'ncu/recommendation/cs.md'
-    - '转专业': 
-      # - '转专业总则'
-      - '计科转专业全流程': 'ncu/transfer/cs.md'
-    - '考研经验分享': 'ncu/a2-postgraduate-entrance-exam.md'
-    # - '转专业完全指南': 'ncu/a3-major-transfer-guide.md'
-    - '各培养方案导读': 'ncu/a4-program-guides.md'
+    - '本部分导览': 'ncu-exclusive/index.md'
+    - '学业发展':
+      # --- 以下为普适性单页内容 ---
+      - '培养方案全解': 'ncu-exclusive/academic-development/program-guide.md'
+      - '学分绩点体系': 'ncu-exclusive/academic-development/credits-and-gpa.md'
+      - '特色实验班': 'ncu-exclusive/academic-development/experimental-classes.md'
+      # --- 以下为可按专业扩展的 Hub 内容 ---
+      - '转专业指南':
+        - '计算机转专业': 'ncu-exclusive/major-transfer/cs.md'
+      - '保研之路':
+        - '计科保研': 'ncu-exclusive/postgraduate-recommendation/cs.md'
+      - '考研经验':
+        - '11408 备考': 'ncu-exclusive/postgraduate-exam/cs.md'
+    - '资源与机会':
+      - '社团与组织':
+        - '计算机相关': 'ncu-exclusive/clubs-and-organizations/cs.md'
+    - '校园生活':
+      - '通识课程体系': 'ncu-exclusive/campus-life/general-education-courses.md'
+      - '体育与体测': 'ncu-exclusive/campus-life/pe-and-fitness-tests.md'
+      - '新生军训': 'ncu-exclusive/campus-life/military-training.md'
 
   - '社区与共建':
     - '我们的初心': 'community/our-story.md'
     - '打卡教程': 'community/how-to-check-in.md'
-    - '贡献者打卡墙': 'community/contributors.md' # <- 我将'打卡墙'改成了更标准的'贡献者打卡墙'
+    - '路友打卡墙': 'community/contributors.md' # <- 我将'打卡墙'改成了更标准的'路友打卡墙'
     - '项目共建指南':
       - '核心准则':
         - '行为准则': 'community/contributing/code-of-conduct.md'
@@ -253,6 +271,8 @@ nav:
         - '分支保护策略': 'community/contributing/branch-protection.md'
         - '网站部署': 'community/contributing/deployment.md'
         - '智能 PR 验证系统': 'community/contributing/pr-workflow-guide.md'
+        - 'Tag 系统': 'community/contributing/workflow/tag.md'
+        - '内容完成度分析': 'community/contributing/workflow/todo.md'
       - '开发实践指南':
         - '调整全局样式 (CSS)': 'community/contributing/styling.md'
         - '调整项目配色': 'community/contributing/colors.md'
@@ -273,7 +293,7 @@ extra_css:
   - 'css/extra.css'
   - https://unpkg.com/katex@0/dist/katex.min.css
 extra_javascript:
-  - 'js/custom.js'
+  - javascripts/readingProgress.js
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js

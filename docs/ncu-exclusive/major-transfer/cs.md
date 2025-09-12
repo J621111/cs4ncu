@@ -1,12 +1,15 @@
 ---
 tags:
   - Topic-MajorTransfer
+  - Topic-DecisionMaking
+  - Context-NCU
+  - Level-Foundational
   - Type-Guide
-  - Level-Beginner
+  - Type-Experience
 ---
 
 
-# 附录 C：转专业完全指南
+# 转计算机完全指南
 
 <div class="grid cards" markdown>
 

@@ -1,12 +1,8 @@
 # Git 与 GitHub
 
-<<<<<<< HEAD
-git 的学习一定是**非常注重实践**的,
-其中一些指令的作用相信也能在一次次实践中弄懂。
-=======
+
 Git 的学习一定**非常注重实践**，
 许多指令的作用也能在一次次实践中弄懂。
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
 
 因此以下只对 Git 的学习进行简单指导，诸如如何注册等不再提及，需读者自行多实践并检索相关知识。
 
@@ -48,23 +44,14 @@ A：创建时选择 🔒Private（私有）选项即可隐藏代码。
 Fork、Star、Watch、Issues、Pull Request、CI/CD
 ```
 
-<<<<<<< HEAD
-## git 基础配置
-使用 Git 之前，首先需要进行一些基本的配置，包括设置用户名和邮箱。这些信息会与每次提交（Commit）关联，用于标识代码的贡献者。
-=======
 ## Git 基础配置
 使用 Git 之前，首先需要进行一些基本配置，包括设置用户名和邮箱。这些信息会与每次提交（Commit）关联，用于标识代码的贡献者。
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
 
 篇幅有限，具体操作请读者自行检索如何配置，比如如何使用 SSH 连接远程仓库。可以先在 GitHub 上找到一个开源仓库（如 https://github.com/octocat/Hello-World），再用 SSH 方式克隆到本地。
 
-<<<<<<< HEAD
-## 创建并管理仓库 (Repository)
-光学会浏览别人的项目那就只能算是停留在非常初步的阶段，我们可以自己创建仓库来管理。
-=======
+
 ## 创建并管理仓库（Repository）
 光会浏览别人的项目还停留在非常初步的阶段，我们可以自己创建仓库来管理。
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
 
 如何创建仓库并不难，简单检索即可上手。
 
@@ -74,37 +61,17 @@ Fork、Star、Watch、Issues、Pull Request、CI/CD
 
 在 Git 中，本地通常指你的本地仓库，而远程指远程仓库（如 GitHub）。你需要通过 git push 将本地的更改同步到远程，或通过 git pull 将远程的更新拉取到本地。这种“本地—远程”协作模式是现代开发的核心实践之一。
 
-<<<<<<< HEAD
-## git 基础操作
-git 有很多指令，对于新手来说常用的并不多，以下为一些指令速记：初始化项目 (git init)，克隆仓库 (git clone)，基本操作 (git add、git commit、git status、git log)，分支管理 (git branch、git checkout、git merge)，以及与远程仓库交互 (git pull、git push、git fetch)。
-=======
 ## Git 基础操作
 Git 有很多指令，对于新手来说常用的并不多。以下为一些指令速记：初始化项目（git init）、克隆仓库（git clone）、基本操作（git add、git commit、git status、git log）、分支管理（git branch、git checkout、git merge），以及与远程仓库交互（git pull、git push、git fetch）。
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
 
 新手可以先从 `git init`、`git clone`、`git add`、`git commit`、`git pull`、`git push` 以及 `git log` 开始，其余的完全可以等需要的时候再学习。
 
 补充：在学习过程中，推荐先了解何为暂存区（Staging Area），例如如何修改暂存区、如何撤销暂存区的更改等。
 
 ## 为何需要分支管理
-<<<<<<< HEAD
-1.并行开发：不同功能可以同时开发，互不影响。
-
-2.方便试验：新想法在独立分支尝试，失败可直接丢弃。
-
-3.协作清晰：每个分支代表一个任务，合并更直观。
-
-4.版本管理：不同分支对应不同用途，如
-main：稳定版
-develop：开发版
-
-
-## 如何写好 commit message
-commit message 相当于是对自己一次代码更改的简单说明，同时当于他人合作时，别人也可以一眼看出你这次更改主要是什么内容。
-=======
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
 
 良好的分支策略能降低协作冲突、隔离风险，并支撑清晰的发布与回滚流程。
+
 1. 并行开发：不同功能可以同时开发，互不影响。
 2. 方便试验：新想法在独立分支尝试，失败可直接丢弃。
 3. 协作清晰：每个分支代表一个任务，合并更直观。
@@ -120,14 +87,8 @@ Commit message 相当于是对自己一次代码更改的简单说明；在与�
 # 如何提交 PR（Pull Request）
 一句话概括其流程：Fork → Clone → 新建分支 → 修改代码 → commit → push → 在 GitHub 点击 “Compare & pull request” → 填标题/描述 → 提交。
 
-<<<<<<< HEAD
 至于为何要提交 PR，简单来说就是方便让代码在正式合并前可被同事审查、跑自动测试，防止把 bug 直接推进主干。
-
-## **学习资料补充**：
-[Learning Git Branching](https://learngitbranching.js.org/?locale=zh_CN) 在此教程中能执行相应的命令，还能看到每个命令的执行情况，被称为最好的 git 学习实践教程。
-=======
-至于为何要提交 PR，简单来说就是为了让代码在正式合并前可被同事审查、跑自动测试，防止把 bug 直接推进主干。
 
 ## 学习资料补充
 [Learning Git Branching](https://learngitbranching.js.org/?locale=zh_CN)：在此教程中能执行相应的命令，还能看到每个命令的执行情况，被称为较好的 Git 学习实践教程。
->>>>>>> 204d91ddc013b8939f088ffb97ab23136558142e
+
